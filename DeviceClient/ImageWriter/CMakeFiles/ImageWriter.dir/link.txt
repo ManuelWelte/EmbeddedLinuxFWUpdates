@@ -1,0 +1,2 @@
+/external-ssd/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-ar qc libImageWriter.a  CMakeFiles/ImageWriter.dir/writer2.cpp.o CMakeFiles/ImageWriter.dir/BootEnvWriter.cpp.o
+/external-ssd/sysroots/x86_64-pokysdk-linux/usr/bin/arm-poky-linux-gnueabi/arm-poky-linux-gnueabi-ranlib libImageWriter.a
