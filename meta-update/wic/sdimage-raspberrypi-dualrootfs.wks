@@ -1,4 +1,4 @@
-kann# short-description: Create Raspberry Pi SD card image
+# short-description: Create Raspberry Pi SD card image
 # long-description: Creates a partitioned SD card image for use with
 # Raspberry Pi. Boot files are located in the first vfat partition.
 
