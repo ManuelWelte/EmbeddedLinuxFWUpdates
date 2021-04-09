@@ -1,0 +1,8 @@
+fdt addr ${fdt_addr} && fdt get value bootargs /chosen bootargs
+if test ! -e mmc 0:1 uboot.env; then setenv ROOTFS_PART_A 2; setenv ROOTFS_PART_B 3; setenv bootlimit 1; setenv upgrade_available 0;
+setenv altbootcmd "setenv altbootcmd_active 1; run distro_bootcmd"; setenv bootcmd "setenv altbootcmd_active 0; run distro_bootcmd;"; fi;
+if test ${altbootcmd_active} = 1; then setexpr bootargs sub "root=/dev/mmcblk0p." "root=/dev/mmcblk0p${ROOTFS_PART_B}"; setenv altbootcmd_active 0;
+load mmc 0:${ROOTFS_PART_B} ${kernel_addr_r} /boot/kernelimg/@@KERNEL_IMAGETYPE@@ saveenv;
+else setexpr bootargs sub "root=/dev/mmcblk0p." "root=/dev/mmcblk0p${ROOTFS_PART_A}";
+load mmc 0:${ROOTFS_PART_A} ${kernel_addr_r} /boot/kernelimg/@@KERNEL_IMAGETYPE@@ saveenv; fi; saveenv; 
+@@KERNEL_BOOTCMD@@ ${kernel_addr_r} - ${fdt_addr}

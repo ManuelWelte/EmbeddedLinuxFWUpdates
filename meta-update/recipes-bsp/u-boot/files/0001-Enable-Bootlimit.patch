@@ -1,0 +1,26 @@
+From b39514d6dd0250b1adaf67c0b4b24f9265a5be4c Mon Sep 17 00:00:00 2001
+From: Manuel <mwelte@kt-elektronik.de>
+Date: Mon, 9 Nov 2020 16:31:42 +0100
+Subject: [PATCH] Enable Bootlimit
+
+---
+ include/configs/rpi.h | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/include/configs/rpi.h b/include/configs/rpi.h
+index 83e258a6b9..cf05fbc0d0 100644
+--- a/include/configs/rpi.h
++++ b/include/configs/rpi.h
+@@ -80,6 +80,9 @@
+ /* Environment */
+ #define CONFIG_SYS_LOAD_ADDR		0x1000000
+ 
++#define CONFIG_BOOTCOUNT_ENV
++#define CONFIG_BOOTCOUNT_LIMIT
++
+ /* Shell */
+ 
+ /* ATAGs support for bootm/bootz */
+-- 
+2.17.1
+
